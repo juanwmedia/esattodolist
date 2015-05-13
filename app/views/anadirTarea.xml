@@ -1,0 +1,20 @@
+<Alloy>
+	<Window class="container" title="Añadir tarea" onOpen="enfocarCampoTexto">
+		
+		<ActionBar platform="android" onHomeIconItemSelected="cerrarVentana" displayHomeAsUp="true"/>
+
+		<RightNavButton platform="ios">
+			<Button title="Guardar" systemButton="SAVE" onClick="guardarTarea"/>
+		</RightNavButton>
+		
+		<Menu platform="android">
+			<MenuItem icon="Ti.Android.R.drawable.ic_menu_save" onClick="guardarTarea" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS"/>
+		</Menu>
+		
+		<Label class="leyenda" text="Título de la tarea:"/>
+		<TextField id="titulo" class="campoTexto" />
+		<Label class="leyenda" text="Descripción de la tarea:"/>
+		<TextArea id="descripcion" class="areaTexto" />
+		
+	</Window>
+</Alloy>

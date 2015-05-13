@@ -1,0 +1,25 @@
+"#tableViewRow": {
+	height: 50,
+	backgroundColor: '#fff',
+	focusable: false
+}
+
+"#tableViewRow[platform=ios]": {
+    selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE
+},
+
+"#check": {
+	image: '/nocompletada.png',
+	right: 10,
+	height: 40,
+	width: 40,
+},
+
+"Label": {
+	left: 15,
+	right: 60,
+	font: {
+		fontSize: 22
+	},
+	color: "black",
+}

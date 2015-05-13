@@ -1,0 +1,9 @@
+<Alloy>
+
+	<!-- http://stackoverflow.com/questions/18017086/getting-id-of-clicked-tablerow-in-titanium-alloy -->
+	<TableViewRow id="tableViewRow" model="{id}">
+		<Label id="label" text="{titulo}" />
+		<ImageView id="check" onClick="cambiarEstado"/>
+	</TableViewRow>
+
+</Alloy>

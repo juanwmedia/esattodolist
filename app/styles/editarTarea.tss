@@ -1,0 +1,34 @@
+".container": {
+	layout: "vertical",
+	backgroundColor: "white"
+}
+".leyenda": {
+	left: 20,
+	top: 15
+}
+
+".campoTexto":{
+	width: '90%',
+	height: 35,
+	borderWidth: 1,
+	borderColor: "#CCC",
+	borderRadius: 5,
+	returnKeyType: Ti.UI.RETURNKEY_DONE,
+	font: {
+		fontSize: 14
+	},
+	color: "black"
+}
+
+".areaTexto":{
+	width: '90%',
+	height: 135,
+	borderWidth: 1,
+	borderColor: "#CCC",
+	borderRadius: 5,
+	returnKeyType: Ti.UI.RETURNKEY_DONE,
+	font: {
+		fontSize: 14
+	},
+	color: "black"
+}

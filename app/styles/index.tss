@@ -8,4 +8,18 @@
 	color: "#000"
 }
 
+"#pie": {
+	bottom: 0,
+	height: '46dp',
+	width: Ti.UI.FILL,
+	backgroundColor: "#CCCCCC"
+},
+
+"#tabbedBar": {
+	backgroundColor: '#000000',
+	index: 0,
+	height: 40,
+	left: 20,
+	right: 20
+}
 

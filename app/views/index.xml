@@ -3,25 +3,39 @@
 	<!-- Data binding Collection/TableViewRow
 	- http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_Data_Binding-section-36739592_AlloyDataBinding-AlloyBinding -->
 	<Collection src="tarea" />
-	
+
 	<!-- iOS -->
 	<NavigationWindow id="navigationWindow" platform="ios">
 		<Window class="container" title="Tareas">
 			<RightNavButton title="Añadir" systemButton="ADD" onClick="anadirTarea" platform="ios" />
-			<TableView id="tableView" dataCollection="tarea" onClick="editarTarea">
+			<TableView id="tableView" dataCollection="tarea" dataFilter="funcionWhere" onClick="editarTarea">
 				<Require src="listadoTareas"/>
 			</TableView>
+			<View id="pie">
+				<!-- http://docs.appcelerator.com/titanium/latest/#!/api/Titanium.UI.iOS.TabbedBar -->
+				<TabbedBar onClick="filtrarTareas" id="tabbedBar">
+					<Labels>
+						<Label>Todas</Label>
+						<Label>Pendientes</Label>
+						<Label>Completadas</Label>
+					</Labels>
+				</TabbedBar>
+			</View>
 		</Window>
 	</NavigationWindow>
-	
+
 	<!-- Android -->
 	<Window class="container" title="Tareas" platform="android">
 		<Menu>
 			<MenuItem icon="Ti.Android.R.drawable.ic_menu_add" onClick="anadirTarea" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS"/>
+			<MenuItem title="Todas" onClick="filtrarTareas" showAsAction="Ti.Android.SHOW_AS_ACTION_NEVER"/>
+			<MenuItem title="Pendientes" onClick="filtrarTareas" showAsAction="Ti.Android.SHOW_AS_ACTION_NEVER"/>
+			<MenuItem title="Completadas" onClick="filtrarTareas" showAsAction="Ti.Android.SHOW_AS_ACTION_NEVER"/>
 		</Menu>
-		<TableView id="tableView" dataCollection="tarea" onClick="editarTarea">
+		<TableView id="tableView" dataCollection="tarea"  dataFilter="funcionWhere" onClick="editarTarea">
 			<Require src="listadoTareas"/>
 		</TableView>
+
 	</Window>
 
 </Alloy>

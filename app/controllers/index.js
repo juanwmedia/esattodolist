@@ -24,6 +24,35 @@ function editarTarea(_evento) {
 	(OS_ANDROID) ? editarTarea.open() : $.navigationWindow.openWindow(editarTarea);
 }
 
+// Define qué estado de tareas mostrar Todas/Pendientes/Completadas
+var INDICES = {
+	'Todas': 0,
+	'Pendientes': 1,
+	'Completadas': 2
+};
+
+var whereIndices = INDICES['Todas'];
+
+// http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_Data_Binding
+function funcionWhere(coleccion) {
+	return !whereIndices ?
+		coleccion.models :
+		coleccion.where({ estado: whereIndices === 1 ? 0 : 1 });
+}
+
+// Filtrar por estado de tareas
+function filtrarTareas(_evento) {
+	
+	if (typeof _evento.index !== 'undefined' && _evento.index !== null) {
+		whereIndices = _evento.index; // TabbedBar
+	} else {
+		whereIndices = INDICES[_evento.source.title]; // Android menu
+	}
+	
+	// Obtengo las tareas que cumplan el filtro
+	tareas.fetch();
+}
+
 //Alloy.Globals.borrarModelos('tarea');
 
 //Alloy.Globals.datosFs();
